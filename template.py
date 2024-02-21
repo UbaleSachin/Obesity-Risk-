@@ -25,6 +25,7 @@ list_of_flies = {
     "params.yaml",
     "notebook/EDA.ipynb",
     "notebook/trials.ipynb",
+    "templates/index.html",
 }
 
 
