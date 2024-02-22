@@ -10,7 +10,7 @@ __version__ = '0.0.1'
 
 REPO_NAME = 'Obesity-Risk-'
 AUTHER_NAME = 'UbaleSachin'
-SRC_REPO = 'Obesity Risk'
+SRC_REPO = 'ObesityRisk'
 AUTHER_EMAIL = 'ubalesachin22@gmail.com'
 
 

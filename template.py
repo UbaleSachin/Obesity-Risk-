@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s: %(message)s: %(lineno)s:')
 
 
-project_name = 'Obesity Risk'
+project_name = 'ObesityRisk'
 
 list_of_flies = {
     ".github/workflows/.gitkeep",
