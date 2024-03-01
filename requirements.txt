@@ -9,7 +9,7 @@ flask
 dvc
 pyYAML
 tqdm
-#python-box[all]~=7.0
-boxsdk
+python-box[all]==7.1
+#boxsdk
 ensure
 #-e .

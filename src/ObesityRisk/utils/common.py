@@ -1,6 +1,7 @@
 # frequently used code instead of writing everywhere we will import from here.
 import os
-from boxsdk.exception import BoxValueError # for prebuild exceptions
+#import csv
+from box.exceptions import BoxValueError # for prebuild exceptions
 import yaml
 from src.ObesityRisk import logger
 import json
@@ -9,6 +10,8 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+import pandas as pd
+import pickle
 
 
 # read yaml file
@@ -73,4 +76,28 @@ def get_size(path: Path) -> str: # path of file
     return f" ~ {size_in_kb} KB " 
 
 
+@ensure_annotations
+def read_csv(path):
+    with open(path) as f:
+        df = pd.read_csv(f)
+        return df
+
+
+@ensure_annotations
+def save_csv(data, path):
+    #with open(path) as f:
+        a = data.to_csv(path, index = False, header = True)
+        return a
+
+
+@ensure_annotations
+def save_pickle(path, data):
+    with open(path, 'wb') as f:
+        pickle.dump(data, f)
+
+
+@ensure_annotations
+def load_pickle(path):
+    with open(path, 'rb') as f:
+        return pickle.load(f)
 

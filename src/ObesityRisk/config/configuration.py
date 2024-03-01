@@ -1,6 +1,7 @@
-from src.ObesityRisk.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from src.ObesityRisk.utils.common import read_yaml, create_directories
-from src.ObesityRisk.entity.config_entity import DataIngestionConfig
+from src.ObesityRisk.constants import *
+from src.ObesityRisk.utils.common import *
+from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig)
+
 
 
 
@@ -27,3 +28,23 @@ class ConfigurationsManager:
         )
 
         return data_ingestion_config
+
+
+
+    
+    def get_transformation_config(self)-> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root])
+        create_directories([config.train_set])
+        create_directories([config.test_set])
+        #create_directories([config.preprocessing_obj])
+
+        data_transformation_config = DataTransformationConfig(
+            root = Path(config.root),
+            train_set = Path(config.train_set),
+            test_set = Path(config.test_set),
+            preprocessing_obj = Path(config.preprocessing_obj)
+        )
+
+        return data_transformation_config
