@@ -22,31 +22,24 @@ class PrepareTransformation:
     def __init__(self, config: DataTransformationConfig):
         self.config = config
 
-    def data_split(self,
-                csv_file_path = CSV_FILE_PATH,
-                train_set_path = TRAIN_SET_PATH,
-                test_set_path = TEST_SET_PATH,
-                ):      
+    def data_split(self):      
          
-        self.csv = read_csv(csv_file_path)
-        self.train = train_set_path
-        self.test = test_set_path
+        csv = pd.read_csv(self.config.data)
         
-        train_df, test_df = train_test_split(self.csv, test_size=0.2, random_state=42)
+        train_df, test_df = train_test_split(csv, test_size=0.2, random_state=42)
 
-        train_df.to_csv(self.train)
-        test_df.to_csv(self.test)
-        logger.info(f'{train_df} and {test_df} split completed')
+        train_df.to_csv(os.path.join(self.config.train_set, "train_data.csv"), index = False)
+        test_df.to_csv(os.path.join(self.config.test_set, "test_data.csv"), index = False)
+        logger.info(f'Train Data and Test Data split completed')
 
-        return self.train, self.test
+        return self.config.train_set, self.config.test_set
 
 
-    def get_data_transformation_object(self,
-                    csv_file_path = CSV_FILE_PATH):
+    def get_data_transformation_object(self,):
 
-        self.csv = read_csv(csv_file_path)
-        numeric_features = self.csv.select_dtypes(include = [int, float]).columns.drop(['id'])
-        categorical_features = self.csv.select_dtypes(include = object).columns.drop(['NObeyesdad'])
+        csv = pd.read_csv(self.config.data)
+        numeric_features = csv.select_dtypes(include = [int, float]).columns.drop(['id'])
+        categorical_features = csv.select_dtypes(include = object).columns.drop(['NObeyesdad'])
 
 
         numeric_pipeline = Pipeline(
@@ -78,30 +71,30 @@ class PrepareTransformation:
         return preprocessor
 
 
-    def initiate_data_transformation(self,
-                                train_data, test_data, 
-                                preprocessing_obj = PREPROCESSOR_PATH,
-                                ):
+    def initiate_data_transformation(self,train_data, test_data,):
 
-        train_data = read_csv(TRAIN_SET_PATH)
-        test_data = read_csv(TEST_SET_PATH)
-        self.preprocessing_obj = preprocessing_obj
+        train_data = pd.read_csv('artifacts/data_transformation/train_set/train_data.csv')
+        test_data = pd.read_csv('artifacts/data_transformation/test_set/test_data.csv')
 
-        logger.info(f"loading {train_data} and {test_data}")
+        logger.info(f"Loading Train_data and Test_data")
 
         target_feature = ["NObeyesdad"]
 
+        remap={'Insufficient_Weight':0 ,'Normal_Weight':1 ,'Obesity_Type_I':2 ,'Obesity_Type_II':3,
+                    'Obesity_Type_III':4, 'Overweight_Level_I':5 ,'Overweight_Level_II':6}
+        
+        
         input_train_features = train_data.iloc[:,1:-1]
-        target_input_train_feature = train_data['NObeyesdad']
+        target_input_train_feature = train_data['NObeyesdad'].map(remap)
 
         input_test_features = test_data.iloc[:,1:-1]
-        traget_input_test_feture = test_data['NObeyesdad']
+        traget_input_test_feture = test_data['NObeyesdad'].map(remap)
 
         logger.info(f'loading preprocessing object')
 
         preprocessing_obj = self.get_data_transformation_object()
 
-        logger.info(f'applying preprocessing on {input_train_features} and {input_test_features}')
+        logger.info(f'applying preprocessing on input_train_features and input_test_features')
 
         input_train_array = preprocessing_obj.fit_transform(input_train_features)
         input_test_array = preprocessing_obj.transform(input_test_features)
@@ -111,7 +104,7 @@ class PrepareTransformation:
 
         logger.info("Saving the prerocessing objest")
 
-        save_pickle(path = self.preprocessing_obj,
+        save_pickle(path = os.path.join(self.config.preprocessing_obj, "preprocessor.pkl"),
         data = preprocessing_obj)
-
+        
         return train_array, test_array

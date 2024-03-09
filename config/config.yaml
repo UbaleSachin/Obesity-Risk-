@@ -8,6 +8,14 @@ data_ingestion:
 
 data_transformation:
   root: artifacts/data_transformation
+  data: artifacts/data_ingestion/data.csv
   train_set: artifacts/data_transformation/train_set
   test_set: artifacts/data_transformation/test_set
-  preprocessing_obj: artifacts/data_transformation/
+  preprocessing_obj: artifacts/data_transformation
+
+
+model_trainer:
+  root: artifacts/model_trainer
+  train_set: artifacts/data_transformation/train_set/scaled_train_data.csv
+  test_set: artifacts/data_transformation/test_set/scaled_test_data.csv
+  model: artifacts/model_trainer/

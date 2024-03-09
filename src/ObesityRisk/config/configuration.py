@@ -1,6 +1,6 @@
 from src.ObesityRisk.constants import *
-from src.ObesityRisk.utils.common import *
-from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig)
+from src.ObesityRisk.utils.common import read_yaml,create_directories
+from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig)
 
 
 
@@ -41,10 +41,38 @@ class ConfigurationsManager:
         #create_directories([config.preprocessing_obj])
 
         data_transformation_config = DataTransformationConfig(
-            root = Path(config.root),
-            train_set = Path(config.train_set),
-            test_set = Path(config.test_set),
-            preprocessing_obj = Path(config.preprocessing_obj)
+            root = config.root,
+            data = config.data,
+            train_set = config.train_set,
+            test_set = config.test_set,
+            preprocessing_obj = config.preprocessing_obj
         )
 
         return data_transformation_config
+
+
+
+
+    def get_model_trainer(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params
+
+        create_directories([config.root])
+
+        model_trainer_config = ModelTrainerConfig(
+            root = Path(config.root),
+            model = Path(config.model),
+            grow_policy=  params.grow_policy,
+            n_estimators= params.n_estimators,
+            learning_rate= params.learning_rate,
+            gamma =   params.gamma,
+            subsample= params.subsample,
+            colsample_bytree= params.colsample_bytree,
+            max_depth= params.max_depth,
+            min_child_weight= params.min_child_weight,
+            reg_lambda= params.reg_lambda,
+            reg_alpha= params.reg_alpha,
+            
+        )
+
+        return model_trainer_config

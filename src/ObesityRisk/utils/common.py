@@ -1,6 +1,5 @@
 # frequently used code instead of writing everywhere we will import from here.
 import os
-#import csv
 from box.exceptions import BoxValueError # for prebuild exceptions
 import yaml
 from src.ObesityRisk import logger
@@ -12,6 +11,7 @@ from pathlib import Path
 from typing import Any
 import pandas as pd
 import pickle
+
 
 
 # read yaml file
@@ -28,6 +28,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         raise e
 
 
+
 # creating Directories Artifact for saving files
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose = True): # list of path directories
@@ -37,12 +38,14 @@ def create_directories(path_to_directories: list, verbose = True): # list of pat
             logger.info(f"creating directory at {path}")
 
 
+
 # for saving evaluation matrices in jason format
 @ensure_annotations
 def save_jason(path = Path, data = dict): # path for saving json file, data to be saved in json file
     with open(path, 'w') as f:
         json.dump(data, f, indent = 4)
     logger.info(f"jason file saved to as: {path}")
+
 
 
 # for loading any json files
@@ -54,11 +57,13 @@ def load_json(path: Path) -> ConfigBox: # path for json file
     return ConfigBox(content) 
 
 
+
 # for saving files in binary format
 @ensure_annotations
 def save_binary(data: Any, path: Path): # data to stroe in the file, path to binary file
     joblib.dump(value=data, filename=path) # saving binary file
     logger.info(f"binary file saved to {path}")
+
 
 
 # for loading binary files
@@ -69,6 +74,7 @@ def load_binary(path: Path) -> Any: # path to binary file
     return data # returning data
 
 
+
 # getting size of file 
 @ensure_annotations
 def get_size(path: Path) -> str: # path of file
@@ -76,24 +82,12 @@ def get_size(path: Path) -> str: # path of file
     return f" ~ {size_in_kb} KB " 
 
 
-@ensure_annotations
-def read_csv(path):
-    with open(path) as f:
-        df = pd.read_csv(f)
-        return df
-
-
-@ensure_annotations
-def save_csv(data, path):
-    #with open(path) as f:
-        a = data.to_csv(path, index = False, header = True)
-        return a
-
 
 @ensure_annotations
 def save_pickle(path, data):
     with open(path, 'wb') as f:
         pickle.dump(data, f)
+
 
 
 @ensure_annotations
