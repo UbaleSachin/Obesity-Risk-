@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/4fb798c74ad843e0b376f41f26ced6b6/artifacts
+end_time: 1710081493083
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4fb798c74ad843e0b376f41f26ced6b6
+run_name: bold-hog-720
+run_uuid: 4fb798c74ad843e0b376f41f26ced6b6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710081482164
+status: 4
+tags: []
+user_id: SACHIN

@@ -13,7 +13,11 @@
 8.update dvc.yaml
 
 
-
+##
+MLFLOW_TRACKING_URI=https://dagshub.com/ubalesachin22/Obesity-Risk-.mlflow \
+MLFLOW_TRACKING_USERNAME=ubalesachin22 \
+MLFLOW_TRACKING_PASSWORD=14c861b68786366b977abad8b824a891884d1216 \
+python script.py
 
 
     

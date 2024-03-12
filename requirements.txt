@@ -11,4 +11,5 @@ pyYAML
 tqdm
 python-box[all]==7.1
 ensure
+mlflow
 #-e .

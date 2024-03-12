@@ -1,6 +1,7 @@
 from src.ObesityRisk.constants import *
 from src.ObesityRisk.utils.common import read_yaml,create_directories
-from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig)
+from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig,
+                                                  ModelEvaluationConfig)
 
 
 
@@ -55,13 +56,18 @@ class ConfigurationsManager:
 
     def get_model_trainer(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params
+        params = self.params.XgbClassifier
 
         create_directories([config.root])
 
         model_trainer_config = ModelTrainerConfig(
             root = Path(config.root),
             model = Path(config.model),
+            train_set = config.train_set,
+            test_set = config.test_set,
+            scaled_train_set= config.scaled_train_set,
+            scaled_test_set = config.scaled_test_set,
+            preprocessing_obj= config.preprocessing_obj,
             grow_policy=  params.grow_policy,
             n_estimators= params.n_estimators,
             learning_rate= params.learning_rate,
@@ -76,3 +82,23 @@ class ConfigurationsManager:
         )
 
         return model_trainer_config
+    
+
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.XgbClassifier
+        
+        create_directories([config.root])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root = config.root,
+            scaled_test_set = config.scaled_test_set,
+            model = config.model,
+            preprocessing_obj= config.preprocessing_obj,
+            metrics = config.metrics,
+            all_params = params,
+            mlflow_uri = 'https://dagshub.com/ubalesachin22/Obesity-Risk-.mlflow'
+        )
+
+        return model_evaluation_config

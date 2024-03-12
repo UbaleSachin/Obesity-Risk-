@@ -41,7 +41,7 @@ def create_directories(path_to_directories: list, verbose = True): # list of pat
 
 # for saving evaluation matrices in jason format
 @ensure_annotations
-def save_jason(path = Path, data = dict): # path for saving json file, data to be saved in json file
+def save_json(path = Path, data = dict): # path for saving json file, data to be saved in json file
     with open(path, 'w') as f:
         json.dump(data, f, indent = 4)
     logger.info(f"jason file saved to as: {path}")

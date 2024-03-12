@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/1d5d52c258d8419790d4c40143a3292a/artifacts
+end_time: 1710083049933
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d5d52c258d8419790d4c40143a3292a
+run_name: bemused-panda-257
+run_uuid: 1d5d52c258d8419790d4c40143a3292a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710083041305
+status: 4
+tags: []
+user_id: SACHIN

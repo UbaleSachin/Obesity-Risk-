@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2aca05497186462b98b1d71a0357b4aa/artifacts
+end_time: 1710169352589
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2aca05497186462b98b1d71a0357b4aa
+run_name: awesome-mouse-683
+run_uuid: 2aca05497186462b98b1d71a0357b4aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710169341634
+status: 4
+tags: []
+user_id: SACHIN

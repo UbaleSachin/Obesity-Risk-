@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/93ce09e9dbc14e5ba80fb82e818ff72f/artifacts
+end_time: 1710083430784
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 93ce09e9dbc14e5ba80fb82e818ff72f
+run_name: casual-colt-8
+run_uuid: 93ce09e9dbc14e5ba80fb82e818ff72f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710083422096
+status: 4
+tags: []
+user_id: SACHIN
