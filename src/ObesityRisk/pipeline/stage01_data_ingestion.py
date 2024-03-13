@@ -1,8 +1,8 @@
-from src.ObesityRisk.config.configuration import ConfigurationsManager
-from src.ObesityRisk.components.data_ingestion import DataIngestion
-from src.ObesityRisk import logger
+from ObesityRisk.config.configuration import ConfigurationsManager
+from ObesityRisk.components.data_ingestion import DataIngestion
+from ObesityRisk import logger
 
-SATGE_NAME = 'Data Ingestion'
+STAGE_NAME = 'Data Ingestion'
 
 class DataIngestionTrainPipeline:
     def __init__(self):

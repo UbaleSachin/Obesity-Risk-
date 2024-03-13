@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/22d9ec08b7bd4123a38083f471dade9f/artifacts
+end_time: 1710322534165
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 22d9ec08b7bd4123a38083f471dade9f
+run_name: rebellious-fly-773
+run_uuid: 22d9ec08b7bd4123a38083f471dade9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710322522353
+status: 4
+tags: []
+user_id: SACHIN

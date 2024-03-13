@@ -1,0 +1,46 @@
+stages:
+  data_ingestion:
+    cmd: python src\ObesityRisk\pipeline\stage01_data_ingestion.py
+    deps:
+      - src\ObesityRisk\pipeline\stage01_data_ingestion.py
+      - Config\Config.yaml
+    outs:
+      - artifacts\data_ingestion
+
+  data_transformation:
+    cmd: python src\ObesityRisk\pipeline\stage02_data_transformation.py
+    deps:
+      - src\ObesityRisk\pipeline\stage02_data_transformation.py
+      - artifacts\data_ingestion\data.csv
+    outs:
+      - artifacts\data_transformation
+
+  model_trainer:
+    cmd: python src\ObesityRisk\pipeline\stage03_model_trainer.py
+    deps: 
+      - src\ObesityRisk\pipeline\stage03_model_trainer.py
+      - artifacts\data_transformation\test_set
+      - artifacts\data_transformation\train_set
+      - artifacts\data_transformation
+    params:
+      - grow_policy
+      - n_estimators
+      - learning_rate
+      - gamma
+      - subsample
+      - colsample_bytree
+      - max_depth
+      - min_child_weight
+      - reg_lambda
+      - reg_alpha
+    outs:
+      - artifacts\model_trainer
+    
+  model_evaluation:
+    cmd: python src\ObesityRisk\pipeline\stage04_model_evaluation.py
+    deps: 
+      - src\ObesityRisk\pipeline\stage04_model_evaluation.py
+      - artifacts\model_trainer
+      - artifacts\data_transformation\test_set
+    outs:
+      - artifacts\model_evaluation

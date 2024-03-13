@@ -11,10 +11,10 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 
-from src.ObesityRisk.utils.common import *
-from src.ObesityRisk import logger
-from src.ObesityRisk.constants import *
-from src.ObesityRisk.entity.config_entity import  DataTransformationConfig
+from ObesityRisk.utils.common import *
+from ObesityRisk import logger
+from ObesityRisk.constants import *
+from ObesityRisk.entity.config_entity import  DataTransformationConfig
 
 
 

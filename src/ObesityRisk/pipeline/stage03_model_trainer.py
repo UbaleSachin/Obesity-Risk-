@@ -1,8 +1,8 @@
-from src.ObesityRisk.config.configuration import ConfigurationsManager
-from src.ObesityRisk.entity.config_entity import ModelTrainerConfig
-from src.ObesityRisk.components.data_transformation import PrepareTransformation
-from src.ObesityRisk.components.model_trainer import PrepareModelTrainer
-from src.ObesityRisk import logger
+from ObesityRisk.config.configuration import ConfigurationsManager
+from ObesityRisk.entity.config_entity import ModelTrainerConfig
+from ObesityRisk.components.data_transformation import PrepareTransformation
+from ObesityRisk.components.model_trainer import PrepareModelTrainer
+from ObesityRisk import logger
 
 
 STAGE_NAME = 'Model Trainer'

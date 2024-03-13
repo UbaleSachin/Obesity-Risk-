@@ -12,10 +12,10 @@ from catboost import CatBoostClassifier
 from sklearn.model_selection import train_test_split,RandomizedSearchCV
 from sklearn.metrics import accuracy_score
 
-from src.ObesityRisk.utils.common import *
-from src.ObesityRisk import logger
-from src.ObesityRisk.constants import *
-from src.ObesityRisk.entity.config_entity import ModelTrainerConfig
+from ObesityRisk.utils.common import *
+from ObesityRisk import logger
+from ObesityRisk.constants import *
+from ObesityRisk.entity.config_entity import ModelTrainerConfig
 import warnings
 warnings.filterwarnings('ignore')
 

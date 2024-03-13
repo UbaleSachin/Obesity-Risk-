@@ -1,6 +1,6 @@
-from src.ObesityRisk.constants import *
-from src.ObesityRisk.utils.common import read_yaml,create_directories
-from src.ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig,
+from ObesityRisk.constants import *
+from ObesityRisk.utils.common import read_yaml,create_directories
+from ObesityRisk.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig,
                                                   ModelEvaluationConfig)
 
 
