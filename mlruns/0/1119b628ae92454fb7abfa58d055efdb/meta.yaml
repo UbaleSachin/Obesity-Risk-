@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/1119b628ae92454fb7abfa58d055efdb/artifacts
+end_time: 1710350092120
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1119b628ae92454fb7abfa58d055efdb
+run_name: debonair-eel-614
+run_uuid: 1119b628ae92454fb7abfa58d055efdb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710350082410
+status: 4
+tags: []
+user_id: SACHIN

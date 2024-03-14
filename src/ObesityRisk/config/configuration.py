@@ -61,8 +61,8 @@ class ConfigurationsManager:
         create_directories([config.root])
 
         model_trainer_config = ModelTrainerConfig(
-            root = Path(config.root),
-            model = Path(config.model),
+            root = config.root,
+            model = config.model,
             train_set = config.train_set,
             test_set = config.test_set,
             scaled_train_set= config.scaled_train_set,

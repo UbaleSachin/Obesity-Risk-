@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/bed5c29fc9544117a1cd741320cfba6d/artifacts
+end_time: 1710351297617
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bed5c29fc9544117a1cd741320cfba6d
+run_name: able-wren-744
+run_uuid: bed5c29fc9544117a1cd741320cfba6d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710351288329
+status: 4
+tags: []
+user_id: SACHIN

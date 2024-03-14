@@ -56,20 +56,22 @@ class PrepareModelTrainer:
         print(scaled_train_X)
         print(train_y)
 
+        logger.info('Converting scaled train array into dataframe')
         scaled_train_X_data = np.array(scaled_train_X)
         scaled_train_X_df = pd.DataFrame(scaled_train_X_data)
         scaled_train_X_df.loc[:, 'NObeyesdad'] = train_y
         print(scaled_train_X_df)
 
+        logger.info('Converting scaled test array into dataframe')
         scaled_test_x_data = np.array(scaled_test_x)
         scaled_test_x_df = pd.DataFrame(scaled_test_x_data)
         scaled_test_x_df.loc[:, 'NObeyesdad'] = test_y
         print(scaled_test_x_df)
 
+        logger.info('Saving scaled train and test dataframe to')
         scaled_train_X_df.to_csv(os.path.join(self.config.scaled_train_set, 'scaled_train_data.csv'), index= False)
         scaled_test_x_df.to_csv(os.path.join(self.config.scaled_test_set, 'scaled_test_data.csv'), index= False)
 
-        
 
         logger.info('fitting train data into model') 
 
@@ -85,6 +87,7 @@ class PrepareModelTrainer:
         #ac = accuracy_score(y_test, pred)
         #print(ac)
 
-        save_pickle(os.path.join(self.config.model, "model.pkl"),xcls)
+        logger.info("saving trained model")
+        model = save_pickle(os.path.join(self.config.model, "model.pkl"),xcls)
 
-        return xcls
+        return scaled_train_X_df, scaled_test_x_df, model
