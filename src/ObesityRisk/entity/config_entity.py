@@ -17,7 +17,7 @@ class DataTransformationConfig:
     data : Path
     train_set : Path
     test_set: Path
-    preprocessing_obj: Path
+    #preprocessing_obj: Path
 
 
 @dataclass(frozen=True)
@@ -39,6 +39,8 @@ class ModelTrainerConfig:
     min_child_weight: int
     reg_lambda: float
     reg_alpha: float
+    data: Path
+    
 
 
 

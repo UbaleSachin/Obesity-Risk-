@@ -26,7 +26,7 @@ class PrepareTransformation:
          
         csv = pd.read_csv(self.config.data)
 
-        csv['BMI'] = csv['Weight'] / csv['Height'] * csv['Height']
+        #csv['BMI'] = csv['Weight'] / csv['Height'] * csv['Height']
         
         train_df, test_df = train_test_split(csv, test_size=0.2, random_state=42)
 
@@ -37,7 +37,7 @@ class PrepareTransformation:
         return self.config.train_set, self.config.test_set
 
 
-    def get_data_transformation_object(self,):
+    def get_data_transformation_object(self):
 
         csv = pd.read_csv(self.config.data)
         numeric_features = csv.select_dtypes(include = [int, float]).columns.drop(['id'])
@@ -72,8 +72,8 @@ class PrepareTransformation:
         
         logger.info("Saving the prerocessing objest")
 
-        save_pickle(path = os.path.join(self.config.preprocessing_obj, "preprocessor.pkl"),
-        data = preprocessor)
+        #save_pickle(path = os.path.join(self.config.preprocessing_obj, "preprocessor.pkl"),
+        #data = preprocessor)
 
         return preprocessor
     

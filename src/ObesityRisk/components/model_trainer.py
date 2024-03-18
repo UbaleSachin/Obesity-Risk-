@@ -16,6 +16,7 @@ from ObesityRisk.utils.common import *
 from ObesityRisk import logger
 from ObesityRisk.constants import *
 from ObesityRisk.entity.config_entity import ModelTrainerConfig
+from ObesityRisk.components.data_transformation import PrepareTransformation
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -32,10 +33,10 @@ class PrepareModelTrainer:
         logger.info("Initializing model trainer")
 
         logger.info("Slpitting Train data into train and test")
-        train_X = train_data.iloc[:, :-1] 
-        train_y = train_data.iloc[:, -1]
-        test_X = test_data.iloc[:, :-1]
-        test_y = test_data.iloc[:, -1]
+        train_X = train_data.drop(['id', 'NObeyesdad'], axis=1)
+        train_y = train_data['NObeyesdad']
+        test_X = test_data.drop(['id', 'NObeyesdad'], axis=1)
+        test_y = test_data['NObeyesdad']
 
         remap={'Insufficient_Weight':0 ,'Normal_Weight':1 ,'Obesity_Type_I':2 ,'Obesity_Type_II':3,
                     'Obesity_Type_III':4, 'Overweight_Level_I':5 ,'Overweight_Level_II':6}
@@ -44,15 +45,15 @@ class PrepareModelTrainer:
         test_y = test_data['NObeyesdad'].map(remap)
 
         logger.info("loading preprocessing object")
-        preprocessor = load_pickle(self.config.preprocessing_obj)
+        preprocessor = PrepareTransformation.get_data_transformation_object(self)
 
         logger.info('applying preprocessing object on train features')
         scaled_train_X = preprocessor.fit_transform(train_X)
         scaled_test_x = preprocessor.transform(test_X)
 
         
-        print("Input Features: ", train_data.iloc[:, :-1])
-        print("Target Feature: ", train_data.iloc[:, -1])
+        print("Input Features of Train Data: ", train_data.iloc[:, :-1].columns)
+        print("Target Feature of Train Data: ", train_data.iloc[:, -1])
         print(scaled_train_X)
         print(train_y)
 
@@ -89,5 +90,6 @@ class PrepareModelTrainer:
 
         logger.info("saving trained model")
         model = save_pickle(os.path.join(self.config.model, "model.pkl"),xcls)
+        save_pickle(os.path.join(self.config.preprocessing_obj, 'preprocessor.pkl'), preprocessor)
 
         return scaled_train_X_df, scaled_test_x_df, model

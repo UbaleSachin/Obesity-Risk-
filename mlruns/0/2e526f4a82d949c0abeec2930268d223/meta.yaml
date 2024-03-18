@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2e526f4a82d949c0abeec2930268d223/artifacts
+end_time: 1710437959904
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2e526f4a82d949c0abeec2930268d223
+run_name: classy-croc-45
+run_uuid: 2e526f4a82d949c0abeec2930268d223
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710437947762
+status: 4
+tags: []
+user_id: SACHIN

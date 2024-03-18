@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Obesity Level Prediction</title>
+</head>
+<body style="background-color:rgb(5, 5, 5); align:center;border:thick dashed rgb(237, 253, 3);">
+<div class="login">
+    <h1 style="color:orange; text-align:center;">-: Obesity Level Prediction :-</h1>
+    <form action="{{url_for('predict')}}" method="post">
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">Gender: </label>
+                    <select class="from-control" name="Street" placeholder="Select Street" required>
+                        <option class="placeholder" selected disabled value="">Select Gender</option>
+                        <option value="Pave">
+                            Male
+                        </option>
+                        <option value="Grvl">
+                            Female
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label"> Age: </label>
+            <input class="form-control" type="number" name=" Age"
+            placeholder="Enter  Age" min="15" max="70" required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Height: </label>
+            <input class="form-control" type="float" name="Height"
+            placeholder="Enter Height" min="1.0" max="2.0" required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Weight: </label>
+            <input type="number" name="Weight" min="30" max="200" step="1" placeholder="Enter Weight"  required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">family_history_with_overweight: </label>
+                    <select class="from-control" name="family_history_with_overweightr" placeholder="family_history_with_overweightr" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Yes">
+                            Yes
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">frequntly eating of high calorie food: </label>
+                    <select class="from-control" name="FAVC" placeholder="FAVC" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Yes">
+                            Yes
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Number of main meals: </label>
+            <input type="number" name="NCP" min="0" max="6" step="1" placeholder="NCP"  required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">Comsumption of food between meals: </label>
+                    <select class="from-control" name="CAEC" placeholder="CAEC" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Sometimes">
+                            Sometimes
+                        </option>
+                        <option value="Frequently">
+                            Frequently
+                        </option>
+                        <option value="no">
+                            no
+                        </option>
+                        <option value="Always">
+                            Always
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">SMOKE: </label>
+                    <select class="from-control" name="SMOKE" placeholder="SMOKE" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Yes">
+                            Yes
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Comsumption of water daily: </label>
+            <input type="number" name="CH2O" min="0" max="6" step="1" placeholder="CH2O"  required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">Calories consumption monitoring: </label>
+                    <select class="from-control" name="SCC" placeholder="SCC" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Yes">
+                            Yes
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Physical activity frequency: </label>
+            <input type="number" name="FAF" min="0" max="5" step="1" placeholder="FAF"  required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="form-label">Time using technology device: </label>
+            <input type="number" name="TUE" min="0" max="5" step="1" placeholder="TUE"  required/>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">Comsumption of alcohol: </label>
+                    <select class="from-control" name="CALC" placeholder="CALC" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Sometimes">
+                            Sometimes
+                        </option>
+                        <option value="Frequently">
+                            Frequently
+                        </option>
+                        <option value="no">
+                            no
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <label class="from-label">Transportation used: </label>
+                    <select class="from-control" name="MTRANS" placeholder="MTRANS" required>
+                        <option class="placeholder" selected disabled value=""></option>
+                        <option value="Public_Transportation">
+                            Public_Transportation
+                        </option>
+                        <option value="Automobile">
+                            Automobile
+                        </option>
+                        <option value="Walking">
+                            Walking
+                        </option>
+                        <option value="Bike">
+                            Bike
+                        </option>
+                        <option value="Motorbike">
+                            Motorbike
+                        </option>
+                    </select>
+        </div><br>
+        <div class="mb-3" style="text-align:center;">
+            <input style="background-color:green; padding: 15px 32px; font-size: 16px; cursor: pointer;"
+                   class="btn btn-primary" type="submit" value="Check Obesity Level" required />
+        </div><br>
+    </form>
+</div>
+<h2 style="text-align:center;color:purple;">Obesity Level is: {{result}}</h2>
+</body>
+</html>

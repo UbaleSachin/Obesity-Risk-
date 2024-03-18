@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/025362a9d3b24a3ea7df6f7d4e351edb/artifacts
+end_time: 1710496601553
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 025362a9d3b24a3ea7df6f7d4e351edb
+run_name: agreeable-zebra-177
+run_uuid: 025362a9d3b24a3ea7df6f7d4e351edb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710496590447
+status: 4
+tags: []
+user_id: SACHIN

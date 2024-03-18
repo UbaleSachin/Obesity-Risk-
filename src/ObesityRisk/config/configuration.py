@@ -46,7 +46,7 @@ class ConfigurationsManager:
             data = config.data,
             train_set = config.train_set,
             test_set = config.test_set,
-            preprocessing_obj = config.preprocessing_obj
+            #preprocessing_obj = config.preprocessing_obj
         )
 
         return data_transformation_config
@@ -78,6 +78,8 @@ class ConfigurationsManager:
             min_child_weight= params.min_child_weight,
             reg_lambda= params.reg_lambda,
             reg_alpha= params.reg_alpha,
+            data = config.data
+            
             
         )
 

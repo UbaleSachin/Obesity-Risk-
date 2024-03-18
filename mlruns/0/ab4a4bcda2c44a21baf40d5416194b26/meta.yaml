@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ab4a4bcda2c44a21baf40d5416194b26/artifacts
+end_time: 1710476657491
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ab4a4bcda2c44a21baf40d5416194b26
+run_name: capable-fawn-585
+run_uuid: ab4a4bcda2c44a21baf40d5416194b26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710476641608
+status: 4
+tags: []
+user_id: SACHIN

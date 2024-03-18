@@ -5,8 +5,8 @@ stages:
     deps:
     - path: Config/Config.yaml
       hash: md5
-      md5: ad28d77419e3885e69601a95fc08db88
-      size: 1111
+      md5: dac338463a389ae3fd560c8b31c55fca
+      size: 1148
     - path: src/ObesityRisk/pipeline/stage01_data_ingestion.py
       hash: md5
       md5: 6b6a3b0e60b8711a46a1799372188ee4
@@ -28,10 +28,6 @@ stages:
       md5: ff57f7ffc74ffe902f5537e1568eebf1
       size: 954
     outs:
-    - path: artifacts/data_transformation/preprocessor.pkl
-      hash: md5
-      md5: 988491681fa94e18ce5ec11cc66a7b77
-      size: 1380
     - path: artifacts/data_transformation/test_data.csv
       hash: md5
       md5: 4b153695bffc7a3209502af30bd15b1b
@@ -43,10 +39,6 @@ stages:
   model_trainer:
     cmd: python src/ObesityRisk/pipeline/stage03_model_trainer.py
     deps:
-    - path: artifacts/data_transformation/preprocessor.pkl
-      hash: md5
-      md5: 988491681fa94e18ce5ec11cc66a7b77
-      size: 1380
     - path: artifacts/data_transformation/test_data.csv
       hash: md5
       md5: 4b153695bffc7a3209502af30bd15b1b
@@ -77,6 +69,10 @@ stages:
       hash: md5
       md5: 1932a79b2f9b216e67847150cdf2199f
       size: 4274313
+    - path: artifacts/model_trainer/preprocessor.pkl
+      hash: md5
+      md5: 0608e306e2ba5bc0c411d5c7bb31a954
+      size: 4079
     - path: artifacts/model_trainer/scaled_test_data.csv
       hash: md5
       md5: 53be4ad5549a10ba8590964c96bb5bd9

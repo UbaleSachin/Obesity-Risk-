@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/6cbc058f2c6e445cbe65f2c439d44aad/artifacts
+end_time: 1710476645486
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6cbc058f2c6e445cbe65f2c439d44aad
+run_name: beautiful-steed-886
+run_uuid: 6cbc058f2c6e445cbe65f2c439d44aad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710476624925
+status: 4
+tags: []
+user_id: SACHIN
