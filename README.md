@@ -6,12 +6,12 @@ About Dataset: The data consist of the estimation of obesity levels in people fr
                with ages between 14 and 61 and diverse eating habits and physical condition.
 
 Projetc Description : 
-   1.The application takes features related to eating habits:
-       1.Frequent consumption of high caloric food, 
-       2.Number of main meals, 
-       3.Consumption of food between meals, 
-       4.Consumption of water daily,
-       5.Consumption of alcohol. 
+   1.The application takes features related to eating habits=
+         1.Frequent consumption of high caloric food, 
+         2.Number of main meals,
+         3.Consumption of food between meals, 
+         4.Consumption of water daily,
+         5.Consumption of alcohol. 
    2.The attributes related with the physical condition are: 
        1.Calories consumption monitoring, 
        2.Physical activity frequency, 
