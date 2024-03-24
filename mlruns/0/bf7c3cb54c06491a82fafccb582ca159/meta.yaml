@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/bf7c3cb54c06491a82fafccb582ca159/artifacts
+end_time: 1710929851530
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bf7c3cb54c06491a82fafccb582ca159
+run_name: resilient-shad-139
+run_uuid: bf7c3cb54c06491a82fafccb582ca159
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710929841001
+status: 4
+tags: []
+user_id: SACHIN

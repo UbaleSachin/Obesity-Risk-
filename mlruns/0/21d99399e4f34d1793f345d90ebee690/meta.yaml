@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/21d99399e4f34d1793f345d90ebee690/artifacts
+end_time: 1711017537777
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 21d99399e4f34d1793f345d90ebee690
+run_name: thundering-crab-346
+run_uuid: 21d99399e4f34d1793f345d90ebee690
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711017526790
+status: 4
+tags: []
+user_id: SACHIN

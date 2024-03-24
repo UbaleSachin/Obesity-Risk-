@@ -13,7 +13,7 @@ def homepage():
 
 @app.route('/train', methods=['GET'])
 def training():
-    os.system('python main.py')
+    os.system('dvc repro')
     return 'Training Successful..'
 
 
@@ -55,4 +55,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0',port = 5000)

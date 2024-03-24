@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/0c967305d4fd4aea8b9b796e623bd22a/artifacts
+end_time: 1710925001408
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0c967305d4fd4aea8b9b796e623bd22a
+run_name: charming-shrew-179
+run_uuid: 0c967305d4fd4aea8b9b796e623bd22a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710924983328
+status: 4
+tags: []
+user_id: SACHIN

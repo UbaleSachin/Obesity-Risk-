@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/a0decd50fcdc4483a5aaa0ac38f54c8c/artifacts
+end_time: 1711015060324
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a0decd50fcdc4483a5aaa0ac38f54c8c
+run_name: skittish-gnat-361
+run_uuid: a0decd50fcdc4483a5aaa0ac38f54c8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711015049103
+status: 4
+tags: []
+user_id: SACHIN

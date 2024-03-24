@@ -30,23 +30,23 @@ stages:
     outs:
     - path: artifacts/data_transformation/test_data.csv
       hash: md5
-      md5: 4b153695bffc7a3209502af30bd15b1b
-      size: 587845
+      md5: 4c97a19c739adca33033a8b5542449a9
+      size: 549471
     - path: artifacts/data_transformation/train_data.csv
       hash: md5
-      md5: 0676bb54129a474b5c42e309fcd8cfd7
-      size: 2352455
+      md5: d3e420fc65bf97ec42c374ea396cf2f3
+      size: 2199047
   model_trainer:
     cmd: python src/ObesityRisk/pipeline/stage03_model_trainer.py
     deps:
     - path: artifacts/data_transformation/test_data.csv
       hash: md5
-      md5: 4b153695bffc7a3209502af30bd15b1b
-      size: 587845
+      md5: 4c97a19c739adca33033a8b5542449a9
+      size: 549471
     - path: artifacts/data_transformation/train_data.csv
       hash: md5
-      md5: 0676bb54129a474b5c42e309fcd8cfd7
-      size: 2352455
+      md5: d3e420fc65bf97ec42c374ea396cf2f3
+      size: 2199047
     - path: src/ObesityRisk/pipeline/stage03_model_trainer.py
       hash: md5
       md5: 89da68aea33e566ba384c7490e66a19e
@@ -71,8 +71,8 @@ stages:
       size: 4274313
     - path: artifacts/model_trainer/preprocessor.pkl
       hash: md5
-      md5: 0608e306e2ba5bc0c411d5c7bb31a954
-      size: 4079
+      md5: 7e1191a487321c7b9aade29be1500719
+      size: 4041
     - path: artifacts/model_trainer/scaled_test_data.csv
       hash: md5
       md5: 53be4ad5549a10ba8590964c96bb5bd9
@@ -81,19 +81,3 @@ stages:
       hash: md5
       md5: f0b63791933c76752b48607dc6285734
       size: 6055613
-  model_evaluation:
-    cmd: python src/ObesityRisk/pipeline/stage04_model_evaluation.py
-    deps:
-    - path: artifacts/model_trainer/model.pkl
-      hash: md5
-      md5: 1932a79b2f9b216e67847150cdf2199f
-      size: 4274313
-    - path: artifacts/model_trainer/scaled_test_data.csv
-      hash: md5
-      md5: 53be4ad5549a10ba8590964c96bb5bd9
-      size: 1514111
-    outs:
-    - path: artifacts/model_evaluation/metrics.json
-      hash: md5
-      md5: 3741b478716e5223a63de5214ba283ff
-      size: 46
