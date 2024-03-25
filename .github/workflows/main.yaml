@@ -3,7 +3,7 @@ name: workflow
 on:
   push:
     branches: [ "main" ]
-    path-ignore: ['README.md']
+    paths-ignore: ['README.md']
 
 permissions:
   contents: read
