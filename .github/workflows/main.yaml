@@ -83,7 +83,7 @@ jobs:
 
 
       - name: Pull latest images
-        runs:
+        run:
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
       # - name: Stop and remove containers if running
