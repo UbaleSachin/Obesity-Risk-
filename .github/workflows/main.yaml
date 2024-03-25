@@ -69,12 +69,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configure  AWS credentials
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -86,8 +87,8 @@ jobs:
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
       # - name: Stop and remove containers if running
-      #   runs:
-            docker ps -q --filter "name=OBESITY-RISK-" | grep -q . && docker stops OBESITY-RISK- && docker rm -fv OBESITY-RISK-
+      #   run:
+      #      docker ps -q --filter "name=OBESITY-RISK-" | grep -q . && docker stops OBESITY-RISK- && docker rm -fv OBESITY-RISK-
 
       - name: Run Docker image to server user
         run: 
