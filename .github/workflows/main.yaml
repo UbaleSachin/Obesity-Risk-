@@ -83,16 +83,16 @@ jobs:
 
 
       - name: Pull latest images
-        run:
+        run: |
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
       # - name: Stop and remove containers if running
-      #   run:
+      #   run: |
       #      docker ps -q --filter "name=obesity_risk" | grep -q . && docker stops obesity_risk && docker rm -fv obesity_risk
 
       - name: Run Docker image to server user
-        run: 
+        run: |
           docker run -d -p 5000:5000 --ipc-"host" --name=obesity_risk -e 'AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}' -e 'AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}' -e 'AWS_REGION=${{secrets.AWS_REGION }}' ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
       - name: Clean previous Docker images and containers
-        run:
+        run: |
          docker system prune -f
