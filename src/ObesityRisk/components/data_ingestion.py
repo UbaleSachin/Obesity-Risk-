@@ -1,9 +1,9 @@
 import os 
 from urllib import request
 import socket
-from ObesityRisk import logger
-from ObesityRisk.utils.common import get_size
-from ObesityRisk.entity.config_entity import DataIngestionConfig
+from src.ObesityRisk import logger
+from src.ObesityRisk.utils.common import get_size
+from src.ObesityRisk.entity.config_entity import DataIngestionConfig
 from pathlib import Path
 
 

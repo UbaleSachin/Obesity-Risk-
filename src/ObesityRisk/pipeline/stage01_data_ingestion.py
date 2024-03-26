@@ -1,6 +1,6 @@
-from ObesityRisk.config.configuration import ConfigurationsManager
-from ObesityRisk.components.data_ingestion import DataIngestion
-from ObesityRisk import logger
+from src.ObesityRisk.config.configuration import ConfigurationsManager
+from src.ObesityRisk.components.data_ingestion import DataIngestion
+from src.ObesityRisk import logger
 
 STAGE_NAME = 'Data Ingestion'
 

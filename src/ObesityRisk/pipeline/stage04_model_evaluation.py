@@ -1,6 +1,6 @@
-from ObesityRisk.config.configuration import ConfigurationsManager
-from ObesityRisk.components.model_evaluation import ModelEvaluation
-from ObesityRisk import logger
+from src.ObesityRisk.config.configuration import ConfigurationsManager
+from src.ObesityRisk.components.model_evaluation import ModelEvaluation
+from src.ObesityRisk import logger
 
 STAGE_NAME = 'Model Evaluation'
 
@@ -12,7 +12,7 @@ class ModelEvaluationPipeline:
         config = ConfigurationsManager()
         model_evaluation_config = config.get_model_evaluation_config()
         model_evaluation_config = ModelEvaluation(config=model_evaluation_config)
-        model_evaluation_config.log_into_mlflow()
+        #model_evaluation_config.log_into_mlflow()
 
 
 if __name__ == '__main__':

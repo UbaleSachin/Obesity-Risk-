@@ -2,7 +2,7 @@
 import os
 from box.exceptions import BoxValueError # for prebuild exceptions
 import yaml
-from ObesityRisk import logger
+from src.ObesityRisk import logger
 import json
 import joblib
 from ensure import ensure_annotations

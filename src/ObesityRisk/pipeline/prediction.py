@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from ObesityRisk.utils.common import *
+from src.ObesityRisk.utils.common import *
 
 
 class PredictionPipeline:

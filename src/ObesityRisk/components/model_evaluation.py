@@ -5,10 +5,10 @@ import mlflow
 import mlflow.sklearn
 import numpy as np
 from sklearn.metrics import accuracy_score
-from ObesityRisk.utils.common import save_json
-from ObesityRisk import logger
-from ObesityRisk.utils.common import *
-from ObesityRisk.entity.config_entity import ModelEvaluationConfig
+from src.ObesityRisk.utils.common import save_json
+from src.ObesityRisk import logger
+from src.ObesityRisk.utils.common import *
+from src.ObesityRisk.entity.config_entity import ModelEvaluationConfig
 
 
 class ModelEvaluation:

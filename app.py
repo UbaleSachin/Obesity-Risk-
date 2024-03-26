@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 import numpy as np
 import pandas as pd
-from ObesityRisk.pipeline.prediction import PredictionPipeline,CoustomData
+from src.ObesityRisk.pipeline.prediction import PredictionPipeline,CoustomData
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def homepage():
 
 @app.route('/train', methods=['GET'])
 def training():
-    os.system('dvc repro')
+    os.system('python main.py')
     return 'Training Successful..'
 
 
